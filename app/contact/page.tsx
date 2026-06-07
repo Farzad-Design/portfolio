@@ -220,7 +220,7 @@ export default function ContactPage() {
                     Message sent!
                   </h3>
                   <p style={{ color: "var(--text-secondary)", fontSize: 14 }}>
-                    Thank you for reaching out. I'll get back to you as soon as possible.
+                    Thank you for reaching out. I&apos;ll get back to you as soon as possible.
                   </p>
                 </div>
               ) : (
