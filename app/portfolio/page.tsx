@@ -9,7 +9,7 @@ const categories = ["All", "Graphic & Print", "Website Design", "Branding", "3D 
 const items = [
   { id: 1, title: "Brand Identity System", category: "Branding", image: "/images/Brand Identity.jpeg", url: "#" },
   { id: 2, title: "Marketing Brochure", category: "Graphic & Print", image: "/images/Print Design.jpeg", url: "#" },
-  { id: 3, title: "Napoli Nero", category: "Website Design", image: "/images/Post Linkedin-Grau-01.png", url: "https://www.designhausstudio.studio/" },
+  { id: 3, title: "Napoli Nero", category: "Website Design", image: "/images/Post Linkedin-Grau-01.png", url: "https://napolinero.designhausstudio.studio/" },
   { id: 4, title: "Logo & Visual Identity", category: "Branding", image: "/images/Logo & Visual Identity.jpeg", url: "#" },
   { id: 5, title: "Event Poster Design", category: "Graphic & Print", image: "/images/Social Media Design.jpeg", url: "#" },
   { id: 6, title: "Corporate Website", category: "Website Design", image: "/images/Landing Page Design.jpeg", url: "#" },

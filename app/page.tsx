@@ -25,7 +25,7 @@ const projects = [
       "Luxury pizza restaurant website with cinematic scroll animations, full-page sections, and a dark elegant aesthetic.",
     category: "Website Design",
     image: "/images/Post Linkedin-Grau-01.png",
-    url: "https://www.designhausstudio.studio/",
+    url: "https://napolinero.designhausstudio.studio/",
     tags: ["Next.js", "GSAP", "Framer Motion"],
   },
 ];
