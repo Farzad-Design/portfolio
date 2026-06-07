@@ -21,6 +21,20 @@ export const metadata: Metadata = {
   title: "Farzad Shahidi — Graphic & Web Designer",
   description:
     "DesignHaus Studio — Professional graphic design, web design, branding, and 3D modeling based in Germany.",
+  openGraph: {
+    title: "Farzad Shahidi — Graphic & Web Designer",
+    description:
+      "DesignHaus Studio — Professional graphic design, web design, branding, and 3D modeling based in Germany.",
+    url: "https://www.designhausstudio.studio",
+    siteName: "DesignHaus Studio",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Farzad Shahidi — Graphic & Web Designer",
+    description:
+      "DesignHaus Studio — Professional graphic design, web design, branding, and 3D modeling based in Germany.",
+  },
 };
 
 export default function RootLayout({
