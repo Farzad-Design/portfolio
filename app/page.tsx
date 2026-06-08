@@ -42,8 +42,8 @@ const projects = [
     description:
       "Luxury Swiss watch brand landing page with dark gold aesthetic, product collection, shopping cart, and cinematic layout.",
     category: "Website Design",
-    image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://luxury-watch-one.vercel.app/",
-    url: "https://luxury-watch-one.vercel.app/",
+    image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://aurum.designhausstudio.studio/",
+    url: "https://aurum.designhausstudio.studio/",
     tags: ["HTML/CSS", "JavaScript", "E-commerce"],
   },
 ];
