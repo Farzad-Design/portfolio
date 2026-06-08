@@ -12,7 +12,7 @@ const items = [
   { id: 3, title: "Napoli Nero", category: "Website Design", image: "/images/Post Linkedin-Grau-01.png", url: "https://napolinero.designhausstudio.studio/" },
   { id: 4, title: "Logo & Visual Identity", category: "Branding", image: "/images/Logo & Visual Identity.jpeg", url: "#" },
   { id: 5, title: "Event Poster Design", category: "Graphic & Print", image: "/images/Social Media Design.jpeg", url: "#" },
-  { id: 6, title: "DesignHaus Studio — Digital Agency", category: "Website Design", image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://digital-agency-chi-gray.vercel.app/", url: "https://digital-agency-chi-gray.vercel.app/" },
+  { id: 6, title: "DesignHaus Studio — Digital Agency", category: "Website Design", image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://agency.designhausstudio.studio/", url: "https://agency.designhausstudio.studio/" },
   { id: 7, title: "3D Product Render", category: "3D Design", image: "/images/3D Modeling.jpeg", url: "#" },
   { id: 8, title: "Packaging Design", category: "Graphic & Print", image: "/images/Print Design.jpeg", url: "#" },
   { id: 9, title: "3D Visualization", category: "3D Design", image: "/images/3D Modeling.jpeg", url: "#" },
