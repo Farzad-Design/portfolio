@@ -69,14 +69,14 @@ export default function Navbar() {
           <img
             src="/images/My Logo.svg?v=2"
             alt="DesignHaus Studio"
-            style={{ height: 88, width: "auto", display: "block" }}
+            className="nav-logo-img"
+            style={{ width: "auto", display: "block" }}
           />
         </Link>
 
         {/* Desktop nav */}
         <nav
           style={{
-            display: "flex",
             alignItems: "center",
             gap: 36,
             position: "absolute",

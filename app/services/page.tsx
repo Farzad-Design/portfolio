@@ -221,6 +221,7 @@ export default function ServicesPage() {
                     {service.subtitle}
                   </p>
                   <p
+                    className="service-desc"
                     style={{
                       fontSize: 14,
                       color: "var(--text-secondary)",
