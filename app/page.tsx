@@ -37,6 +37,15 @@ const projects = [
     url: "https://agency.designhausstudio.studio/",
     tags: ["HTML/CSS", "JavaScript", "Web3Forms"],
   },
+  {
+    title: "AURUM — Luxury Timepieces",
+    description:
+      "Luxury Swiss watch brand landing page with dark gold aesthetic, product collection, shopping cart, and cinematic layout.",
+    category: "Website Design",
+    image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://luxury-watch-one.vercel.app/",
+    url: "https://luxury-watch-one.vercel.app/",
+    tags: ["HTML/CSS", "JavaScript", "E-commerce"],
+  },
 ];
 
 export default function HomePage() {
