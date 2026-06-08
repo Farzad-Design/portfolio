@@ -59,9 +59,22 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1000));
-    setLoading(false);
-    setSent(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "24d02d1d-036a-4a55-b81e-99f623c5962e",
+          subject: "New inquiry from DesignHaus Studio Portfolio",
+          from_name: form.name,
+          ...form,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) setSent(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputStyle: React.CSSProperties = {
