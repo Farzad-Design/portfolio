@@ -28,6 +28,15 @@ const projects = [
     url: "https://napolinero.designhausstudio.studio/",
     tags: ["Next.js", "GSAP", "Framer Motion"],
   },
+  {
+    title: "DesignHaus Studio — Agency",
+    description:
+      "Single-page digital agency landing site with animated orb background, glassmorphism cards, and Web3Forms contact integration.",
+    category: "Website Design",
+    image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://digital-agency-chi-gray.vercel.app/",
+    url: "https://digital-agency-chi-gray.vercel.app/",
+    tags: ["HTML/CSS", "JavaScript", "Web3Forms"],
+  },
 ];
 
 export default function HomePage() {
