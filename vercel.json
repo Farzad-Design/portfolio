@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/noir-eclipse",
+      "destination": "https://luxury-perfume-ten.vercel.app/noir-eclipse"
+    },
+    {
       "source": "/noir-eclipse/:path*",
       "destination": "https://luxury-perfume-ten.vercel.app/noir-eclipse/:path*"
     }
