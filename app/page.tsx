@@ -164,11 +164,11 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          {/* Portfolio-style grid */}
+          {/* Portfolio-style grid — hero card full width, two below */}
           <motion.div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
+              gridTemplateColumns: "repeat(2, 1fr)",
               gap: 20,
             }}
             className="feat-grid"
@@ -200,6 +200,7 @@ export default function HomePage() {
                   cursor: "pointer",
                   display: "block",
                   textDecoration: "none",
+                  gridColumn: i === 0 ? "1 / -1" : "auto",
                 }}
               >
                 <Image
@@ -235,7 +236,6 @@ export default function HomePage() {
         </div>
 
         <style jsx>{`
-          @media (max-width: 900px) { .feat-grid { grid-template-columns: repeat(2,1fr) !important; } }
           @media (max-width: 560px) { .feat-grid { grid-template-columns: 1fr !important; } }
         `}</style>
       </section>
