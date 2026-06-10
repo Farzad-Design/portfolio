@@ -24,27 +24,27 @@ const projects = [
     description:
       "Luxury pizza restaurant website with cinematic scroll animations, full-page sections, and a dark elegant aesthetic.",
     category: "Website Design",
-    image: "/images/Post Linkedin-Grau-01.png",
+    image: "/images/napoli-nero.jpg",
     url: "https://napolinero.designhausstudio.studio/",
     tags: ["Next.js", "GSAP", "Framer Motion"],
-  },
-  {
-    title: "DesignHaus Studio — Agency",
-    description:
-      "Single-page digital agency landing site with animated orb background, glassmorphism cards, and Web3Forms contact integration.",
-    category: "Website Design",
-    image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://agency.designhausstudio.studio/",
-    url: "https://agency.designhausstudio.studio/",
-    tags: ["HTML/CSS", "JavaScript", "Web3Forms"],
   },
   {
     title: "AURUM — Luxury Timepieces",
     description:
       "Luxury Swiss watch brand landing page with dark gold aesthetic, product collection, shopping cart, and cinematic layout.",
     category: "Website Design",
-    image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://aurum.designhausstudio.studio/",
+    image: "/images/luxury-watch.jpg",
     url: "https://aurum.designhausstudio.studio/",
     tags: ["HTML/CSS", "JavaScript", "E-commerce"],
+  },
+  {
+    title: "Noir Éclipse",
+    description:
+      "Luxury perfume brand website with dark editorial design, full-screen hero, fragrance collection, and smooth interactions.",
+    category: "Website Design",
+    image: "/images/noir-eclipse.jpg",
+    url: "https://noir-eclipse.designhausstudio.studio/",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
 ];
 
