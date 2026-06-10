@@ -104,68 +104,43 @@ export default function PortfolioPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.94 }}
                   transition={{ duration: 0.35, ease: "easeOut" }}
+                  whileHover="hover"
+                  variants={{
+                    hover: { y: -6, boxShadow: "0 20px 60px rgba(0,0,0,0.6)" },
+                  }}
                   style={{
                     position: "relative",
                     borderRadius: 14,
                     overflow: "hidden",
-                    aspectRatio: "4 / 3",
-                    background: "var(--bg-card)",
-                    border: "1px solid var(--border)",
+                    aspectRatio: "16 / 9",
+                    border: "1px solid transparent",
+                    backgroundImage:
+                      "linear-gradient(#0a0f1c, #0a0f1c), linear-gradient(135deg, rgba(201,169,110,0.45) 0%, rgba(255,255,255,0.06) 50%, rgba(201,169,110,0.2) 100%)",
+                    backgroundOrigin: "border-box",
+                    backgroundClip: "padding-box, border-box",
                     cursor: item.url !== "#" ? "pointer" : "default",
                     display: "block",
                     textDecoration: "none",
                   }}
-                  whileHover="hover"
                 >
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "cover", objectPosition: "top center" }}
                   />
-                  {/* Hover overlay */}
                   <motion.div
-                    variants={{
-                      hover: { opacity: 1 },
-                    }}
+                    variants={{ hover: { opacity: 1 } }}
                     initial={{ opacity: 0 }}
-                    transition={{ duration: 0.25 }}
+                    transition={{ duration: 0.3 }}
                     style={{
                       position: "absolute",
                       inset: 0,
-                      background:
-                        "linear-gradient(to top, rgba(10,15,28,0.92) 0%, rgba(10,15,28,0.3) 100%)",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "flex-end",
-                      padding: "20px",
+                      background: "rgba(0,0,0,0.15)",
+                      pointerEvents: "none",
                     }}
-                  >
-                    <p
-                      style={{
-                        fontSize: 11,
-                        fontWeight: 600,
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        color: "var(--text-muted)",
-                        marginBottom: 4,
-                      }}
-                    >
-                      {item.category}
-                    </p>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <h3 style={{ fontFamily: "var(--font-poppins)", fontWeight: 700, fontSize: 16, color: "#FFFFFF" }}>
-                      {item.title}
-                    </h3>
-                    {item.url !== "#" && (
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, marginLeft: 8 }}>
-                        <path d="M3 8h10M8 3l5 5-5 5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    )}
-                  </div>
-                  </motion.div>
+                  />
                 </motion.a>
-
               ))}
             </AnimatePresence>
           </motion.div>
@@ -185,11 +160,6 @@ export default function PortfolioPage() {
       </section>
 
       <style jsx>{`
-        @media (max-width: 900px) {
-          .portfolio-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-        }
         @media (max-width: 560px) {
           .portfolio-grid {
             grid-template-columns: 1fr !important;
