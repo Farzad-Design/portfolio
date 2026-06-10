@@ -184,13 +184,19 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover="hover"
+                variants={{
+                  hover: { y: -6, boxShadow: "0 20px 60px rgba(0,0,0,0.6)" },
+                }}
                 style={{
                   position: "relative",
                   borderRadius: 14,
                   overflow: "hidden",
-                  aspectRatio: "4 / 3",
-                  background: "var(--bg-card)",
-                  border: "1px solid var(--border)",
+                  aspectRatio: "16 / 9",
+                  border: "1px solid transparent",
+                  backgroundImage:
+                    "linear-gradient(#0a0f1c, #0a0f1c), linear-gradient(135deg, rgba(201,169,110,0.45) 0%, rgba(255,255,255,0.06) 50%, rgba(201,169,110,0.2) 100%)",
+                  backgroundOrigin: "border-box",
+                  backgroundClip: "padding-box, border-box",
                   cursor: "pointer",
                   display: "block",
                   textDecoration: "none",
@@ -200,37 +206,19 @@ export default function HomePage() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  style={{ objectFit: "cover", transition: "transform 0.5s ease" }}
+                  style={{ objectFit: "cover", objectPosition: "top center" }}
                 />
-                {/* Hover overlay */}
                 <motion.div
                   variants={{ hover: { opacity: 1 } }}
                   initial={{ opacity: 0 }}
-                  transition={{ duration: 0.25 }}
+                  transition={{ duration: 0.3 }}
                   style={{
                     position: "absolute",
                     inset: 0,
-                    background: "linear-gradient(to top, rgba(8,12,22,0.95) 0%, rgba(8,12,22,0.35) 100%)",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-end",
-                    padding: "20px",
+                    background: "rgba(0,0,0,0.15)",
+                    pointerEvents: "none",
                   }}
-                >
-                  <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", marginBottom: 6 }}>
-                    {project.category}
-                  </p>
-                  <h3 style={{ fontFamily: "var(--font-poppins)", fontWeight: 700, fontSize: 16, color: "#FFFFFF", marginBottom: 8 }}>
-                    {project.title}
-                  </h3>
-                  <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                    {project.tags.map((tag) => (
-                      <span key={tag} style={{ background: "rgba(255,255,255,0.12)", borderRadius: 4, padding: "3px 8px", fontSize: 11, fontWeight: 500, color: "rgba(255,255,255,0.8)" }}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
+                />
               </motion.a>
             ))}
           </motion.div>
