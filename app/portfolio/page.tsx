@@ -14,7 +14,7 @@ const items = [
   { id: 5, title: "Event Poster Design", category: "Graphic & Print", image: "/images/Social Media Design.jpeg", url: "#" },
   { id: 6, title: "DesignHaus Studio — Digital Agency", category: "Website Design", image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://agency.designhausstudio.studio/", url: "https://agency.designhausstudio.studio/" },
   { id: 7, title: "AURUM — Luxury Timepieces", category: "Website Design", image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://aurum.designhausstudio.studio/", url: "https://aurum.designhausstudio.studio/" },
-  { id: 8, title: "Noir Éclipse — Luxury Perfume", category: "Website Design", image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://luxury-perfume-ten.vercel.app/noir-eclipse", url: "https://www.designhausstudio.studio/noir-eclipse" },
+  { id: 8, title: "Noir Éclipse — Luxury Perfume", category: "Website Design", image: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://luxury-perfume-ten.vercel.app/", url: "https://noir-eclipse.designhausstudio.studio" },
   { id: 9, title: "3D Product Render", category: "3D Design", image: "/images/3D Modeling.jpeg", url: "#" },
   { id: 10, title: "Packaging Design", category: "Graphic & Print", image: "/images/Print Design.jpeg", url: "#" },
   { id: 11, title: "3D Visualization", category: "3D Design", image: "/images/3D Modeling.jpeg", url: "#" },
