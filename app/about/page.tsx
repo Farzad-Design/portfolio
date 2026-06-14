@@ -5,10 +5,12 @@ import Image from "next/image";
 
 const adobeTools = [
   "Illustrator", "Photoshop", "InDesign",
-  "After Effects", "Adobe Substance", "Adobe XD", "Figma",
+  "After Effects", "Adobe Substance", "Adobe XD",
 ];
 
-const webTools = ["WordPress", "Elementor"];
+const webTools = ["WordPress", "Elementor", "Figma"];
+
+const aiTools = ["ChatGPT", "Claude", "Midjourney", "Adobe Firefly", "Runway", "Sora"];
 
 const bio = [
   "With over 20 years of experience in graphic design and visual communication, I specialize in creating modern, functional, and impactful designs across digital and print media.",
@@ -153,7 +155,7 @@ export default function AboutPage() {
           </motion.div>
 
           <div
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}
+            style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32 }}
             className="skills-grid"
           >
             <motion.div
@@ -195,12 +197,35 @@ export default function AboutPage() {
                 ))}
               </div>
             </motion.div>
+
+            <motion.div
+              className="card"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: 0.2 }}
+            >
+              <h3 style={{ fontFamily: "var(--font-poppins)", fontWeight: 700, fontSize: 15, color: "#FFFFFF", marginBottom: 20, display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#A855F7", display: "inline-block", flexShrink: 0 }} />
+                Artificial Intelligence
+              </h3>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {aiTools.map((tool) => (
+                  <span key={tool} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid var(--border)", borderRadius: 8, padding: "7px 14px", fontSize: 13, fontWeight: 500, color: "var(--text-primary)" }}>
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       <style jsx>{`
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+          .skills-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 600px) {
           .skills-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
