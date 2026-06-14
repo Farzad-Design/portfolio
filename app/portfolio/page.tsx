@@ -7,7 +7,7 @@ import Image from "next/image";
 const categories = ["All", "Graphic & Print", "Website Design", "Branding", "3D Design"];
 
 const items = [
-  { id: 1, title: "Brand Identity System", category: "Branding", image: "/images/Brand Identity.jpeg", url: "#" },
+  { id: 1, title: "Brand Identity System", category: "Branding", image: "/images/portfolio-home.jpg", url: "#" },
   { id: 2, title: "Marketing Brochure", category: "Graphic & Print", image: "/images/Print Design.jpeg", url: "#" },
   { id: 3, title: "Napoli Nero", category: "Website Design", image: "/images/napoli-nero.jpg", url: "https://napolinero.designhausstudio.studio/" },
   { id: 4, title: "Logo & Visual Identity", category: "Branding", image: "/images/Logo & Visual Identity.jpeg", url: "#" },
