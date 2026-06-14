@@ -11,7 +11,7 @@ const items = [
   { id: 6, title: "DesignHaus Studio — Digital Agency", category: "Website Design", image: "/images/digital-agency.jpg", url: "https://agency.designhausstudio.studio/" },
   { id: 7, title: "AURUM — Luxury Timepieces", category: "Website Design", image: "/images/luxury-watch.jpg", url: "https://aurum.designhausstudio.studio/" },
   { id: 8, title: "Noir Éclipse — Luxury Perfume", category: "Website Design", image: "/images/noir-eclipse.jpg", url: "https://noir-eclipse.designhausstudio.studio" },
-  { id: 12, title: "PRESSHAUS — Industrial Print Studio", category: "Website Design", image: "/images/presshaus.png", url: "https://presshaus.vercel.app/" },
+  { id: 12, title: "PRESSHAUS — Industrial Print Studio", category: "Website Design", image: "/images/presshaus.png", url: "https://presshaus.designhausstudio.studio/" },
   { id: 13, title: "LinkedIn Profile", category: "Branding", image: "/images/linkedin.png", url: "https://www.linkedin.com/in/farzad-s-298779119" },
   { id: 1, title: "Brand Identity System", category: "Branding", image: "/images/portfolio-home.jpg", url: "#" },
   { id: 4, title: "Logo & Visual Identity", category: "Branding", image: "/images/Logo & Visual Identity.jpeg", url: "#" },
