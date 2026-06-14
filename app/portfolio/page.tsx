@@ -7,19 +7,15 @@ import Image from "next/image";
 const categories = ["All", "Graphic & Print", "Website Design", "Branding", "3D Design"];
 
 const items = [
-  { id: 1, title: "Brand Identity System", category: "Branding", image: "/images/portfolio-home.jpg", url: "#" },
-  { id: 2, title: "Marketing Brochure", category: "Graphic & Print", image: "/images/Print Design.jpeg", url: "#" },
   { id: 3, title: "Napoli Nero", category: "Website Design", image: "/images/napoli-nero.jpg", url: "https://napolinero.designhausstudio.studio/" },
-  { id: 12, title: "PRESSHAUS — Industrial Print Studio", category: "Website Design", image: "/images/presshaus.png", url: "https://presshaus.vercel.app/" },
-  { id: 13, title: "LinkedIn Profile", category: "Branding", image: "/images/linkedin.png", url: "https://www.linkedin.com/in/farzad-s-298779119" },
-  { id: 4, title: "Logo & Visual Identity", category: "Branding", image: "/images/Logo & Visual Identity.jpeg", url: "#" },
-  { id: 5, title: "Event Poster Design", category: "Graphic & Print", image: "/images/Social Media Design.jpeg", url: "#" },
   { id: 6, title: "DesignHaus Studio — Digital Agency", category: "Website Design", image: "/images/digital-agency.jpg", url: "https://agency.designhausstudio.studio/" },
   { id: 7, title: "AURUM — Luxury Timepieces", category: "Website Design", image: "/images/luxury-watch.jpg", url: "https://aurum.designhausstudio.studio/" },
   { id: 8, title: "Noir Éclipse — Luxury Perfume", category: "Website Design", image: "/images/noir-eclipse.jpg", url: "https://noir-eclipse.designhausstudio.studio" },
-  { id: 9, title: "3D Product Render", category: "3D Design", image: "/images/3D Modeling.jpeg", url: "#" },
-  { id: 10, title: "Packaging Design", category: "Graphic & Print", image: "/images/Print Design.jpeg", url: "#" },
-  { id: 11, title: "3D Visualization", category: "3D Design", image: "/images/3D Modeling.jpeg", url: "#" },
+  { id: 12, title: "PRESSHAUS — Industrial Print Studio", category: "Website Design", image: "/images/presshaus.png", url: "https://presshaus.vercel.app/" },
+  { id: 13, title: "LinkedIn Profile", category: "Branding", image: "/images/linkedin.png", url: "https://www.linkedin.com/in/farzad-s-298779119" },
+  { id: 1, title: "Brand Identity System", category: "Branding", image: "/images/portfolio-home.jpg", url: "#" },
+  { id: 4, title: "Logo & Visual Identity", category: "Branding", image: "/images/Logo & Visual Identity.jpeg", url: "#" },
+  { id: 5, title: "Event Poster Design", category: "Graphic & Print", image: "/images/Social Media Design.jpeg", url: "#" },
 ];
 
 export default function PortfolioPage() {
