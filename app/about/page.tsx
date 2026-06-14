@@ -10,7 +10,7 @@ const adobeTools = [
 
 const webTools = ["WordPress", "Elementor", "Figma"];
 
-const aiTools = ["ChatGPT", "Claude", "Midjourney", "Adobe Firefly", "Runway", "Sora"];
+const aiTools = ["ChatGPT", "Claude", "Midjourney", "Adobe Firefly", "Runway", "Sora", "Google AI Studio"];
 
 const bio = [
   "With over 20 years of experience in graphic design and visual communication, I specialize in creating modern, functional, and impactful designs across digital and print media.",
