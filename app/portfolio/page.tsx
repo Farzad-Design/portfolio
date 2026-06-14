@@ -23,8 +23,8 @@ const items = [
 export default function PortfolioPage() {
   const [active, setActive] = useState("All");
 
-  const filtered =
-    active === "All" ? items : items.filter((item) => item.category === active);
+  const filtered = (active === "All" ? items : items.filter((item) => item.category === active))
+    .sort((a, b) => (a.url === "#" ? 1 : 0) - (b.url === "#" ? 1 : 0));
 
   return (
     <div className="page-enter" style={{ paddingTop: 100 }}>
