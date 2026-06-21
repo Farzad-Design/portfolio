@@ -4,25 +4,35 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-const categories = ["All", "Graphic & Print", "Website Design", "Branding", "3D Design"];
+const categories = ["All", "Graphic & Print", "Website Design", "Branding", "3D Design", "Digital Signage"];
 
-const items = [
+type Item = {
+  id: number;
+  title: string;
+  category: string;
+  image: string;
+  url: string;
+  video?: string;
+};
+
+const items: Item[] = [
   { id: 3, title: "Napoli Nero", category: "Website Design", image: "/images/napoli-nero.jpg", url: "https://napolinero.designhausstudio.studio/" },
   { id: 6, title: "DesignHaus Studio — Digital Agency", category: "Website Design", image: "/images/digital-agency.jpg", url: "https://agency.designhausstudio.studio/" },
   { id: 7, title: "AURUM — Luxury Timepieces", category: "Website Design", image: "/images/luxury-watch.jpg", url: "https://aurum.designhausstudio.studio/" },
   { id: 8, title: "Noir Éclipse — Luxury Perfume", category: "Website Design", image: "/images/noir-eclipse.jpg", url: "https://noir-eclipse.designhausstudio.studio" },
   { id: 12, title: "PRESSHAUS — Industrial Print Studio", category: "Website Design", image: "/images/presshaus.png", url: "https://presshaus.designhausstudio.studio/" },
   { id: 13, title: "LinkedIn Profile", category: "Branding", image: "/images/linkedin.png", url: "https://www.linkedin.com/in/farzad-s-298779119" },
-  { id: 1, title: "Brand Identity System", category: "Branding", image: "/images/portfolio-home.jpg", url: "#" },
-  { id: 4, title: "Logo & Visual Identity", category: "Branding", image: "/images/Logo & Visual Identity.jpeg", url: "#" },
-  { id: 5, title: "Event Poster Design", category: "Graphic & Print", image: "/images/Social Media Design.jpeg", url: "#" },
+  { id: 1, title: "Aryan Pizza — Digital Menu Board", category: "Digital Signage", image: "/images/cover-pizza.jpg", url: "#", video: "/videos/pizza_web.mp4" },
+  { id: 4, title: "Aryan Pasta — Digital Menu Board", category: "Digital Signage", image: "/images/cover-pasta.jpg", url: "#", video: "/videos/pasta_web.mp4" },
+  { id: 5, title: "Aryan Snacks — Digital Menu Board", category: "Digital Signage", image: "/images/cover-snacks.jpg", url: "#", video: "/videos/snacks_web.mp4" },
 ];
 
 export default function PortfolioPage() {
   const [active, setActive] = useState("All");
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   const filtered = (active === "All" ? items : items.filter((item) => item.category === active))
-    .sort((a, b) => (a.url === "#" ? 1 : 0) - (b.url === "#" ? 1 : 0));
+    .sort((a, b) => (a.video ? 0 : 1) - (b.video ? 0 : 1));
 
   return (
     <div className="page-enter" style={{ paddingTop: 100 }}>
@@ -92,11 +102,12 @@ export default function PortfolioPage() {
           >
             <AnimatePresence mode="popLayout">
               {filtered.map((item) => (
-                <motion.a
+                <motion.div
                   key={item.id}
-                  href={item.url}
-                  target={item.url !== "#" ? "_blank" : undefined}
-                  rel="noopener noreferrer"
+                  onClick={() => {
+                    if (item.video) setActiveVideo(item.video);
+                    else if (item.url !== "#") window.open(item.url, "_blank");
+                  }}
                   layout
                   initial={{ opacity: 0, scale: 0.94 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -116,9 +127,8 @@ export default function PortfolioPage() {
                       "linear-gradient(#0a0f1c, #0a0f1c), linear-gradient(135deg, rgba(201,169,110,0.45) 0%, rgba(255,255,255,0.06) 50%, rgba(201,169,110,0.2) 100%)",
                     backgroundOrigin: "border-box",
                     backgroundClip: "padding-box, border-box",
-                    cursor: item.url !== "#" ? "pointer" : "default",
+                    cursor: "pointer",
                     display: "block",
-                    textDecoration: "none",
                   }}
                 >
                   <Image
@@ -134,14 +144,93 @@ export default function PortfolioPage() {
                     style={{
                       position: "absolute",
                       inset: 0,
-                      background: "rgba(0,0,0,0.15)",
+                      background: "rgba(0,0,0,0.35)",
                       pointerEvents: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
-                  />
-                </motion.a>
+                  >
+                    {item.video && (
+                      <div style={{
+                        width: 56,
+                        height: 56,
+                        borderRadius: "50%",
+                        background: "rgba(255,255,255,0.15)",
+                        backdropFilter: "blur(8px)",
+                        border: "2px solid rgba(255,255,255,0.6)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                          <polygon points="5,3 19,12 5,21" />
+                        </svg>
+                      </div>
+                    )}
+                  </motion.div>
+                </motion.div>
               ))}
             </AnimatePresence>
           </motion.div>
+
+          {/* Video Modal */}
+          <AnimatePresence>
+            {activeVideo && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setActiveVideo(null)}
+                style={{
+                  position: "fixed",
+                  inset: 0,
+                  background: "rgba(0,0,0,0.92)",
+                  zIndex: 1000,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: 24,
+                }}
+              >
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  onClick={(e) => e.stopPropagation()}
+                  style={{ width: "100%", maxWidth: 1200, position: "relative" }}
+                >
+                  <button
+                    onClick={() => setActiveVideo(null)}
+                    style={{
+                      position: "absolute",
+                      top: -40,
+                      right: 0,
+                      background: "none",
+                      border: "none",
+                      color: "white",
+                      fontSize: 28,
+                      cursor: "pointer",
+                      lineHeight: 1,
+                    }}
+                  >
+                    ✕
+                  </button>
+                  <video
+                    src={activeVideo}
+                    controls
+                    autoPlay
+                    style={{
+                      width: "100%",
+                      borderRadius: 12,
+                      display: "block",
+                    }}
+                  />
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {filtered.length === 0 && (
             <p

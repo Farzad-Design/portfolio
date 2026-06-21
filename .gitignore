@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large original videos (keep only compressed _web versions)
+public/videos/pizza.mp4
+public/videos/pasta.mp4
+public/videos/snacks.mp4
