@@ -9,29 +9,29 @@ const categories = ["All", "Graphic & Print", "Website Design", "Branding", "3D 
 type Item = {
   id: number;
   title: string;
-  category: string;
+  categories: string[];
   image: string;
   url: string;
   video?: string;
 };
 
 const items: Item[] = [
-  { id: 3, title: "Napoli Nero", category: "Website Design", image: "/images/napoli-nero.jpg", url: "https://napolinero.designhausstudio.studio/" },
-  { id: 6, title: "DesignHaus Studio — Digital Agency", category: "Website Design", image: "/images/digital-agency.jpg", url: "https://agency.designhausstudio.studio/" },
-  { id: 7, title: "AURUM — Luxury Timepieces", category: "Website Design", image: "/images/luxury-watch.jpg", url: "https://aurum.designhausstudio.studio/" },
-  { id: 8, title: "Noir Éclipse — Luxury Perfume", category: "Website Design", image: "/images/noir-eclipse.jpg", url: "https://noir-eclipse.designhausstudio.studio" },
-  { id: 12, title: "PRESSHAUS — Industrial Print Studio", category: "Website Design", image: "/images/presshaus.png", url: "https://presshaus.designhausstudio.studio/" },
-  { id: 13, title: "LinkedIn Profile", category: "Branding", image: "/images/linkedin.png", url: "https://www.linkedin.com/in/farzad-s-298779119" },
-  { id: 1, title: "Aryan Pizza — Digital Menu Board", category: "Digital Signage", image: "/images/cover-pizza.jpg", url: "#", video: "/videos/pizza_web.mp4" },
-  { id: 4, title: "Aryan Pasta — Digital Menu Board", category: "Digital Signage", image: "/images/cover-pasta.jpg", url: "#", video: "/videos/pasta_web.mp4" },
-  { id: 5, title: "Aryan Snacks — Digital Menu Board", category: "Digital Signage", image: "/images/cover-snacks.jpg", url: "#", video: "/videos/snacks_web.mp4" },
+  { id: 3, title: "Napoli Nero", categories: ["Website Design"], image: "/images/napoli-nero.jpg", url: "https://napolinero.designhausstudio.studio/" },
+  { id: 6, title: "DesignHaus Studio — Digital Agency", categories: ["Website Design"], image: "/images/digital-agency.jpg", url: "https://agency.designhausstudio.studio/" },
+  { id: 7, title: "AURUM — Luxury Timepieces", categories: ["Website Design"], image: "/images/luxury-watch.jpg", url: "https://aurum.designhausstudio.studio/" },
+  { id: 8, title: "Noir Éclipse — Luxury Perfume", categories: ["Website Design"], image: "/images/noir-eclipse.jpg", url: "https://noir-eclipse.designhausstudio.studio" },
+  { id: 12, title: "PRESSHAUS — Industrial Print Studio", categories: ["Website Design", "Graphic & Print"], image: "/images/presshaus.png", url: "https://presshaus.designhausstudio.studio/" },
+  { id: 13, title: "LinkedIn Profile", categories: ["Branding"], image: "/images/linkedin.png", url: "https://www.linkedin.com/in/farzad-s-298779119" },
+  { id: 1, title: "Aryan Pizza — Digital Menu Board", categories: ["Digital Signage"], image: "/images/cover-pizza.jpg", url: "#", video: "/videos/pizza_web.mp4" },
+  { id: 4, title: "Aryan Pasta — Digital Menu Board", categories: ["Digital Signage"], image: "/images/cover-pasta.jpg", url: "#", video: "/videos/pasta_web.mp4" },
+  { id: 5, title: "Aryan Snacks — Digital Menu Board", categories: ["Digital Signage"], image: "/images/cover-snacks.jpg", url: "#", video: "/videos/snacks_web.mp4" },
 ];
 
 export default function PortfolioPage() {
   const [active, setActive] = useState("All");
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
-  const filtered = (active === "All" ? items : items.filter((item) => item.category === active))
+  const filtered = (active === "All" ? items : items.filter((item) => item.categories.includes(active)))
     .sort((a, b) => (a.video ? 1 : 0) - (b.video ? 1 : 0));
 
   return (
