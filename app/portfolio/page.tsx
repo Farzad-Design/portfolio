@@ -32,7 +32,7 @@ export default function PortfolioPage() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   const filtered = (active === "All" ? items : items.filter((item) => item.category === active))
-    .sort((a, b) => (a.video ? 0 : 1) - (b.video ? 0 : 1));
+    .sort((a, b) => (a.video ? 1 : 0) - (b.video ? 1 : 0));
 
   return (
     <div className="page-enter" style={{ paddingTop: 100 }}>
